@@ -125,7 +125,7 @@ if not pathlib.Path.is_dir(output_directory / segment_folder_name):
 	exit()
 
 print_info("Checking available segments...")
-dirlist = sorted_alphanumeric([x.name for x in pathlib.Path(output_directory / segment_folder_name).glob('*.ts')])
+dirlist = sorted_alphanumeric([x.name for x in pathlib.Path(output_directory / segment_folder_name).glob('[!.]*.ts')])
 first_segment = int(dirlist[0].split('_')[0])
 print_info(f"First segment: {output_directory / dirlist[0]}")
 last_segment = int(dirlist[-1].split('_')[0])
